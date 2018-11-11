@@ -1,0 +1,141 @@
+<html>
+
+<head>
+    <title>Profile</title>
+
+</head>
+
+<body>
+    <div align="center">
+        <h1>Create, Delete, Edit, or View Tasks</h1> Task ID:
+        <br>
+        <input type="text" name="TaskID" id="TaskID">
+        <br> Message:
+        <br>
+        <input type="text" name="Message" id="Message">
+        <br> To Number:
+        <br>
+        <input type="text" name="ToNumber" id="ToNumber">
+        <br>
+        <br>
+        <input type="submit" id="saveTask" value="Save Task">
+        <br>
+        <p id="orderSaved"></p>
+        <input type="submit" id="deleteTask" value="Delete Task">
+        <br>
+        <br>
+        <input type="submit" id="editTask" value="Edit Task">
+        <br>
+        <br>
+        <input type="submit" id="getTasks" value="View all tasks">
+        <br>
+        <br>
+        <!-- <input type="textarea" name="Orders" style="width:200px; height:200px;" id="Order" wrap="soft"> -->
+        <div id="showTasks">
+            <table id="Tasks">
+                <colgroup>
+                    <col style="width:20%">
+                        <col style="width:20%">
+                            <col style="width:20%">
+                                <col style="width:20%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>Task ID</th>
+                        <th>Message</th>
+                        <th>ToNumber</th>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+	<script type="text/javascript" src="moment.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+
+	<script>
+	document.getElementById("TaskID").value = moment("2016-10-19").isValid();
+	document.getElementById("Message").value = moment("20316-10-19").isBefore();//Before now... past
+	document.getElementById("ToNumber").value = moment("2016-10-19").isAfter("2050-12-31");//after 2050
+	</script>
+    <!-- <script>
+        document.getElementById("saveTask").onclick = function() {
+            var jsonDoc = {
+                "TableName": "Tasks",
+                "Item": {
+					
+                    "TaskID": document.getElementById("TaskID").value,
+                    "Message": document.getElementById("Message").value,
+                    "ToNumber": document.getElementById("ToNumber").value
+                }
+            };
+            $.ajax({
+                url: "https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD",
+                type: "post",
+                data: JSON.stringify(jsonDoc),
+                dataType: "json",
+                success: function(jsonDoc) {
+                    console.info(jsonDoc);
+                    alert("Task Saved!");
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            $("#getTasks").click(function() {
+                $.get("https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD", function(data, status) {
+                    // alert("Data: " + data + "\nStatus: " + status);
+                    $("#Tasks").text(JSON.stringify(data));
+                });
+            });
+        });
+
+        document.getElementById("deleteTask").onclick = function() {
+            var jsonDoc = {
+                "TableName": "Tasks",
+                "Key": {
+                    "TaskID": document.getElementById("TaskID").value
+                },
+            };
+            $.ajax({
+                url: "https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD",
+                type: "delete",
+                data: JSON.stringify(jsonDoc),
+                dataType: "json",
+                success: function(jsonDoc) {
+                    console.info(jsonDoc);
+                    alert("Item Deleted");
+                }
+            });
+        }
+
+        document.getElementById("editTask").onclick = function() {
+            var jsonDoc = {
+                "TableName": "Tasks",
+                "Key": {
+                    "TaskID": document.getElementById("TaskID").value
+                },
+                "UpdateExpression": "set ToNumber = :a, Message = :b",
+                "ExpressionAttributeValues": {
+                    ":a": document.getElementById("ToNumber").value,
+                    ":b": document.getElementById("Message").value
+                },
+                "ReturnValues": "UPDATED_NEW"
+            };
+            $.ajax({
+                url: "https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD",
+                type: "put",
+                data: JSON.stringify(jsonDoc),
+                dataType: "json",
+                success: function(jsonDoc) {
+                    console.info(jsonDoc);
+                    alert("Task Edited!");
+                }
+            });
+        }
+    </script> -->
+</body>
+
+</html>
