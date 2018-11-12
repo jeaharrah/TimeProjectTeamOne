@@ -19,20 +19,20 @@
         <input type="text" name="ToNumber" id="ToNumber" required>
         <br>
         <br> Month:
-		<select name="months" required>
+		<select name="months" id="Month" required>
 		<option disabled selected value="Month">Select a Month</option>
-		<option value="January">January</option>
-		<option value="February">February</option>
-		<option value="March">March</option>
-		<option value="April">April</option>
-		<option value="May">May</option>
-		<option value="June">June</option>
-		<option value="July">July</option>
-		<option value="August">August</option>
-		<option value="September">September</option>
-		<option value="October">October</option>
-		<option value="November">November</option>
-		<option value="December">December</option>
+		<option value="January" id="January">January</option>
+		<option value="February" id="February">February</option>
+		<option value="March" id="March">March</option>
+		<option value="April" id="April">April</option>
+		<option value="May" id="May">May</option>
+		<option value="June" id="June">June</option>
+		<option value="July" id="July">July</option>
+		<option value="August" id="August">August</option>
+		<option value="September" id="September">September</option>
+		<option value="October" id="October">October</option>
+		<option value="November" id="November">November</option>
+		<option value="December" id="December">December</option>
 		</select>
 		<br><br>Day:
 		<input type="text" name="Day" id="Day" maxlength=2 size=2 required>
@@ -41,25 +41,25 @@
 		<input type="text" name="Year" id="Year" maxlength=4 size=4 required>
 		<br>
 		<br> Hour:
-		<select name="hours" required>
+		<select name="hours" id="Hour" required>
 			<option disabled selected value="Select an Hour">Hour</option>
-			<option value="1">1:00</option>
-			<option value="2">2:00</option>
-			<option value="3">3:00</option>
-			<option value="4">4:00</option>
-			<option value="5">5:00</option>
-			<option value="6">6:00</option>
-			<option value="7">7:00</option>
-			<option value="8">8:00</option>
-			<option value="9">9:00</option>
-			<option value="10">10:00</option>
-			<option value="11">11:00</option>
-			<option value="12">12:00</option>
+			<option value="1" id="1" >1:00</option>
+			<option value="2" id="2" >2:00</option>
+			<option value="3" id="3" >3:00</option>
+			<option value="4" id="4" >4:00</option>
+			<option value="5" id="5" >5:00</option>
+			<option value="6" id="6" >6:00</option>
+			<option value="7" id="7" >7:00</option>
+			<option value="8" id="8" >8:00</option>
+			<option value="9" id="9" >9:00</option>
+			<option value="10" id="10" >10:00</option>
+			<option value="11" id="11" >11:00</option>
+			<option value="12" id="12" >12:00</option>
 		</select>&nbsp;&nbsp;&nbsp;&nbsp; AM/PM: 
-		<select name="am/pm" required>
+		<select name="am/pm" id="AM/PM" required>
 		<option disabled selected value="am/pm">AM/PM</option>
-		<option value="am">AM</option>
-		<option value="pm">PM</option>
+		<option value="am" id="AM">AM</option>
+		<option value="pm" id="PM">PM</option>
 		</select>
 		<br>
 		<br>
@@ -104,10 +104,14 @@
             var jsonDoc = {
                 "TableName": "Tasks",
                 "Item": {
-                    "TaskID": document.getElementById("TaskID").value,
                     "Message": document.getElementById("Message").value,
-                    "ToNumber": document.getElementById("ToNumber").value
-                }
+                    "ToNumber": document.getElementById("ToNumber").value,
+					"Day": document.getElementById("Day").value,
+					"Year": document.getElementById("Year").value,
+					"Hour": document.getElementById("Hour").value,
+					"Month": document.getElementById("Month").value,
+					"AM/PM": document.getElementById("AM/PM").value
+				}
             };
             $.ajax({
                 url: "https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD",
