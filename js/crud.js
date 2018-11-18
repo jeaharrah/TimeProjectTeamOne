@@ -74,7 +74,18 @@ if(ampm == "pm")
 	hour = (parseInt(hour)+12).toString();
 
 
+//2018-11-17T23:23:42.505Z
 var timeStamp = year + "-" + month + "-" + day;
+timeStamp += "T" + hour
+timeStamp += ":00:00"
+
+var nowTime = new Date();
+//nowTime.setHours(nowTime.getHours() + 1);
+nowTime = nowTime.toISOString();
+
+//document.getElementById("ToNumber").value = nowTime + "nowTime";
+//document.getElementById("Message").value = timeStamp;
+//return;
 				
 				if(!moment(timeStamp).isValid())
 				{
@@ -83,7 +94,7 @@ var timeStamp = year + "-" + month + "-" + day;
 				}
 				
 				
-				if(moment(timeStamp).isBefore()) // Before now
+				if(moment(timeStamp).isBefore(nowTime)) // Before now
 				{
 					alert("Please enter a time in the future.");
 					return;
@@ -95,7 +106,9 @@ var timeStamp = year + "-" + month + "-" + day;
 					return;
 				}
 				
-				timeStamp += "T" + hour;
+				//timeStamp += "T" + hour;
+				
+				timeStamp = timeStamp.substring(0, 13);
 	
 	
 	
@@ -154,6 +167,8 @@ var timeStamp = year + "-" + month + "-" + day;
         }
 
         document.getElementById("editTask").onclick = function() {
+			//document.getElementById("ToNumber").value =new Date().toISOString();
+			//return;
             var jsonDoc = {
                 "TableName": "Tasks",
                 "Key": {
