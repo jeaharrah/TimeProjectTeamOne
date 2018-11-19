@@ -117,7 +117,7 @@ nowTime = nowTime.toISOString();
                 "Item": {
 					"TaskID": randomString(),
                     "Message": document.getElementById("Message").value,
-                    "ToNumber": document.getElementById("ToNumber").value,
+                    "ToNumber": "+1" + document.getElementById("ToNumber").value,
 					"StampOfTime": timeStamp
 					/* "Day": document.getElementById("Day").value,
 					"Year": document.getElementById("Year").value,
@@ -134,6 +134,7 @@ nowTime = nowTime.toISOString();
                 success: function(jsonDoc) {
                     console.info(jsonDoc);
                     alert("Task Saved!");
+					clearFeilds();
                 }
             });
         }
@@ -168,7 +169,9 @@ nowTime = nowTime.toISOString();
 
         document.getElementById("editTask").onclick = function() {
 			//document.getElementById("ToNumber").value =new Date().toISOString();
-			//return;
+			var num = new libphonenumber.AsYouType('US').input('+12158803785');
+			document.getElementById("ToNumber").value = num.isValidNumber();
+			return;
             var jsonDoc = {
                 "TableName": "Tasks",
                 "Key": {
@@ -192,6 +195,16 @@ nowTime = nowTime.toISOString();
                 }
             });
         }
+		
+function clearFeilds(){
+	document.getElementById("ToNumber").value = "";
+	document.getElementById("Message").value = "";
+	document.getElementById("Month").value = "Month";
+	document.getElementById("Hour").value = "Select an Hour";
+	document.getElementById("Year").value =  "";
+	document.getElementById("Day").value = "";
+	document.getElementById("AM/PM").value = "am/pm"
+}
 		
 function randomString() {
 	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
