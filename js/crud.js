@@ -117,7 +117,7 @@ nowTime = nowTime.toISOString();
                 "Item": {
 					"TaskID": randomString(),
                     "Message": document.getElementById("Message").value,
-                    "ToNumber": "+1" + document.getElementById("ToNumber").value,
+                    "ToNumber": document.getElementById("ToNumber").value,
 					"StampOfTime": timeStamp
 					/* "Day": document.getElementById("Day").value,
 					"Year": document.getElementById("Year").value,
