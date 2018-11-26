@@ -1,9 +1,6 @@
 
 
 document.getElementById("saveTask").onclick = function() {
-	
-/* document.getElementById("Message").value =  document.getElementById("Hour").value;	
-return; */
 
 var year = document.getElementById("Year").value;
 var month = document.getElementById("Month").value;
@@ -84,9 +81,6 @@ var nowTime = new Date();
 //nowTime.setHours(nowTime.getHours() + 1);
 nowTime = nowTime.toISOString();
 
-//document.getElementById("ToNumber").value = nowTime + "nowTime";
-//document.getElementById("Message").value = timeStamp;
-//return;
 				
 				if(!moment(timeStamp).isValid())
 				{
@@ -107,8 +101,6 @@ nowTime = nowTime.toISOString();
 					return;
 				}
 				
-				//timeStamp += "T" + hour;
-				
 				timeStamp = timeStamp.substring(0, 13);
 	
 	
@@ -119,12 +111,7 @@ nowTime = nowTime.toISOString();
 					"TaskID": randomString(),
                     "Message": document.getElementById("Message").value,
                     "ToNumber": document.getElementById("ToNumber").value,
-					"StampOfTime": timeStamp
-					/* "Day": document.getElementById("Day").value,
-					"Year": document.getElementById("Year").value,
-					"Hour": document.getElementById("Hour").value,
-					"Month": document.getElementById("Month").value,
-					"AM/PM": document.getElementById("AM/PM").value */
+					"StampOfTime": timeStamp	
 				}
             };
             $.ajax({
@@ -135,7 +122,7 @@ nowTime = nowTime.toISOString();
                 success: function(jsonDoc) {
                     console.info(jsonDoc);
                     alert("Task Saved!");
-					clearFeilds();
+					clearFields();
                 }
             });
         }
@@ -197,7 +184,7 @@ nowTime = nowTime.toISOString();
             });
         }
 		
-function clearFeilds(){
+function clearFields(){
 	document.getElementById("ToNumber").value = "";
 	document.getElementById("Message").value = "";
 	document.getElementById("Month").value = "Month";
