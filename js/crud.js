@@ -67,7 +67,8 @@ switch(hour)//ISO format needs 0
 	case '6': hour = "06"; break;
 	case '7': hour = "07"; break;
 	case '8': hour = "08"; break;
-	case '9': hour = "09";
+	case '9': hour = "09"; break;
+	case '12': hour = "00"; 
 }
 
 if(ampm == "pm")
