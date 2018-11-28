@@ -10,7 +10,7 @@ var ampm = document.getElementById("AM/PM").value;
 
 if(year == "" || month == "" || day == "")
 {
-	alert("Please fill out all feilds");
+	alert("Please fill out all fields");
 	return;
 }
 
