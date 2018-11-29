@@ -15,41 +15,12 @@
         <br>
         <input maxLength="10" size="10" type="text" name="ToNumber" id="ToNumber" required style="font-family:Tahoma;font-size:16pt">
 		<br>
-        <br>Month:
-		<select name="months" id="Month" required style="font-family:Tahoma;font-size:16pt">
-			<option disabled selected value="Month">Select a Month</option>
-			<option value="January">January</option>
-			<option value="February">February</option>
-			<option value="March">March</option>
-			<option value="April">April</option>
-			<option value="May">May</option>
-			<option value="June">June</option>
-			<option value="July">July</option>
-			<option value="August">August</option>
-			<option value="September">September</option>
-			<option value="October">October</option>
-			<option value="November">November</option>
-			<option value="December">December</option>
-		</select>
-		<br><br>Day:
-		<input type="text" name="Day" id="Day" maxlength="2" size="2" required style="font-family:Tahoma;font-size:16pt">
-		&nbsp;&nbsp;&nbsp;
-		Year:
-		<select name="year" id="Year" required style="font-family:Tahoma;font-size:16pt">
-			<option disabled selected value="Year">Year</option>
-			<option value="2018">2018</option>
-			<option value="2019">2019</option>
-			<option value="2020">2020</option>
-			<option value="2021">2021</option>
-			<option value="2022">2022</option>
-			<option value="2023">2023</option>
-			<option value="2024">2024</option>
-			<option value="2025">2025</option>
-		</select>
+        <br>Select Date:<br>
+        <input type="date" id="date" value="yyyy-MM-dd" name="date" size="20" style="font-family:Tahoma;font-size:16pt"/>
 		<br>
 		<br>Hour:
-		<select name="hours" id="Hour" required style="font-family:Tahoma;font-size:16pt">
-			<option disabled selected value="Select an Hour">Hour</option>
+		<select name="hours"  id="Hour" required style="font-family:Tahoma;font-size:16pt">
+			<option disabled selected value="Hour">Hour</option>
 			<option value="1">1:00</option>
 			<option value="2">2:00</option>
 			<option value="3">3:00</option>
@@ -72,9 +43,6 @@
 		<br>
 		<input type="submit" id="saveTask" value="Save Task" style="font-size:20pt;width:150px">
 		<br>
-        <p id="orderSaved"></p>
-
-        <!-- <input type="textarea" name="Orders" style="width:200px; height:200px;" id="Order" wrap="soft"> -->
 
     </div>
 
@@ -85,28 +53,6 @@
 	<script type="text/javascript" src="js/moment.js"></script>
 	<script src="js/crud.js"></script>
 	
-        <script>
-        document.getElementById("saveTask").onclick = function() {
-            var jsonDoc = {
-                "TableName": "Tasks",
-                "Item": {
-                    "Message": document.getElementById("Message").value,
-                    "ToNumber": "+1" + document.getElementById("ToNumber").value,
-					"Day": document.getElementById("Day").value,
-					"Year": document.getElementById("Year").value,
-					"Hour": document.getElementById("Hour").value,
-					"Month": document.getElementById("Month").value,
-					"AM/PM": document.getElementById("AM/PM").value
-				}
-                    "ToNumber": document.getElementById("ToNumber").value
-                }
-            };
-            $.ajax({
-                url: "https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD",
-                }
-            });
-        }
-    </script>
 </body>
 
 </html>

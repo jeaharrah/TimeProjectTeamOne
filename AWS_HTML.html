@@ -15,7 +15,7 @@
         <br>
 		<br>10-digit SMS Number:
         <br>
-        <input type="text" name="ToNumber" id="ToNumber" required style="font-family:Tahoma;font-size:16pt">
+        <input type="text" name="ToNumber" id="ToNumber" disabled selected value="mm/dd/yyyy" required style="font-family:Tahoma;font-size:16pt">
         <br>
         <br>Select Date:<br>
         <input type="date" id="date" name="date" size="20" style="font-family:Tahoma;font-size:16pt"/>
@@ -59,7 +59,7 @@
 	<script type="text/javascript" src="js/moment.js"></script>
 	<script src="js/crud.js"></script>
 
-    <script>
+<!--     <script>
         document.getElementById("saveTask").onclick = function () {
             var jsonDoc = {
                 "TableName": "Tasks",
@@ -133,7 +133,7 @@
                 }
             });
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
