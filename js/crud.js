@@ -21,26 +21,30 @@ document.getElementById("saveTask").onclick = function () {
 	//}
 	
 	if (message == "") {
-		alert("please enter a message.")
+		alert("Please enter a message.")
 		return;
 	}
 	
 	if (toNumber == "") {
-		alert("please enter a phone number.")
+		alert("Please enter a phone number.")
 		return;
 	}
 	
+	if (toNumber.length <= 10) {
+		alert("Please enter a phone number that is 10 digits long.")
+		return;
+	}
 	
 	if (typeof date != "string" || date == "") {
-		alert("please select a date.")
+		alert("Please select a date.")
 		return;
 	}
 	if (hour == "Hour") {
-		alert("please enter an hour.")
+		alert("Please select an hour.")
 		return;
 	}
 	if (ampm != "pm" && ampm != "am") {
-		alert("please enter AM/PM.")
+		alert("Please select AM/PM.")
 		return;
 	}
 	/* switch (month) {
