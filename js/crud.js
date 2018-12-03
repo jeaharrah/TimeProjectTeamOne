@@ -30,7 +30,7 @@ document.getElementById("saveTask").onclick = function () {
 		return;
 	}
 	
-	if (toNumber.length <= 10) {
+	if (toNumber.length < 10) {
 		alert("Please enter a phone number that is 10 digits long.")
 		return;
 	}
