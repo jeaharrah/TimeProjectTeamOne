@@ -19,13 +19,11 @@
         <input type="text" name="ToNumber" id="ToNumber" placeholder="0123456789" size="12" maxlength="10" required
             style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700">
         <br>
-        <br><b>Select Date:</b><br>
-        <input type="datetime-local" id="date" name="date" size="20" style="font-family:Tahoma;font-size:16pt;border-color:#ff6700"/>
-        
-        </form>
+        <br><b>Select Date and Time:</b><br>
+        <input type="datetime-local" id="date" name="date" size="20" style="font-family:Tahoma;font-size:16pt;border-color:#ff6700" step="3600"/>
         <br>
-        <br><b>Hour:</b>
-        <select name="hours" id="Hour" required style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;border-width:medium">
+        <!-- <br><b>Hour:</b> -->
+        <!-- <select name="hours" id="Hour" required style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;border-width:medium">
             <option disabled selected value="Select an Hour">Hour</option>
             <option value="1">1:00</option>
             <option value="2">2:00</option>
@@ -44,30 +42,25 @@
             <option disabled selected value="am/pm">AM/PM</option>
             <option value="am">AM</option>
             <option value="pm">PM</option>
-        </select>
-        <br>
+        </select> -->
+
         <br>
         <input type="submit" id="saveTask" value="Save Task" style="font-size:20pt;width:150px;background-color:#ff6700;font-family:Tahoma;color:white">
         <br>
         <p id="orderSaved"></p>
-        <p style="font-size:10pt;text-align:center;position:fixed;bottom:10px;width:100%">By using this service, you
+        <p style="font-size:10pt;text-align:center;position:fixed;bottom:10px;width:100%">By using this service,
+            you
             agree to the Twilio API <a href="https://www.twilio.com/legal/tos">Terms &amp Conditions.</a></p>
 
         <!-- <input type="textarea" name="Orders" style="width:200px; height:200px;" id="Order" wrap="soft"> -->
 
-    </div>
+        <script type="text/javascript" src="https://unpkg.com/libphonenumber-js/bundle/libphonenumber-js.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/moment.js"></script>
+        <script src="js/crud.js"></script>
 
-    <script type="text/javascript" src="https://unpkg.com/libphonenumber-js/bundle/libphonenumber-js.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/moment.js"></script>
-    <script src="js/crud.js"></script>
 
-    <script>
-        $(function () {
-            $('#date').datetimepicker();
-        });
-    </script>
 </body>
 
 </html>
