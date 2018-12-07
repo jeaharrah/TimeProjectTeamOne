@@ -1,0 +1,9 @@
+body {
+   background: black url(wood.png) repeat;
+   position: relative;
+   width: 90%;
+   
+   min-width: 1000px;
+   max-width: 1400px;
+    
+}
