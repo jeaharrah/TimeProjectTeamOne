@@ -18,8 +18,8 @@
     <br>
     <br><b>Phone Number: </b>
     <br>
-    <input type="text" name="ToNumber" id="ToNumber" placeholder="0123456789" size="12" maxlength="10" required
-        style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700">
+    <input type='text' onkeypress='validate(event)' name="ToNumber" id="ToNumber" placeholder="0123456789" size="12" maxlength="10"
+    required style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700">
         <div class="tooltip"><b>?</b>
           <span class="tooltiptext">
             <li> 10 Digits phone number</li>
@@ -68,6 +68,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/moment.js"></script>
     <script src="js/crud.js"></script>
+    <script src="js/inputInt.js"></script>
     <link rel="stylesheet" href="css/popup.css">
 
 <!--     <script>
