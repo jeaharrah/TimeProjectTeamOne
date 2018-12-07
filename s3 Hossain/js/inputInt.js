@@ -15,3 +15,11 @@ function validate(evt) {
     if(theEvent.preventDefault) theEvent.preventDefault();
   }
 }
+
+
+window.onload = function() {
+ const myInput = document.getElementById('ToNumber');
+ myInput.onpaste = function(e) {
+   e.preventDefault();
+ }
+}
