@@ -15,6 +15,12 @@ function saveTask(){
 	var message = document.getElementById("Message").value;
 	var toNumber = document.getElementById("ToNumber").value;
 	
+	//document.getElementById("Message").value = hour;
+	//return;
+	
+	
+	
+	
 	//if (year == "" || month == "" || day == "") {
 		//alert("Please fill out all fields");
 		//return;
@@ -39,7 +45,7 @@ function saveTask(){
 		alert("Please select a date.")
 		return;
 	}
-	if (hour == "Hour") {
+	if (hour == "Select an Hour") {
 		alert("Please select an hour.")
 		return;
 	}
@@ -271,6 +277,10 @@ function randomString() {
 }
 
 function checkCount(){
+	if (document.getElementById("ToNumber").value == "") {
+		alert("Please enter a phone number.")
+		return;
+	}
 	$.get("https://vr3v4bjgm1.execute-api.us-east-1.amazonaws.com/default/CheckPhoneNumber?attributeValue=" + document.getElementById("ToNumber").value, 
 				    function(data, status) {
                     if(data.Count > 4)
