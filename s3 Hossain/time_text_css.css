@@ -1,5 +1,6 @@
 body {
-   background-image:linear-gradient(#0c1d49, #7796c4, #e0e7f2);
+   /* background: black url(wood.png) repeat; */
+   background-image:linear-gradient(#05005c, #5372c2, #ffffff);
    position: relative;
    width: 100%;
    
