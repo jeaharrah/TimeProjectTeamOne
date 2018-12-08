@@ -2,24 +2,26 @@
 
 <title>TimeText | Home</title>
 
-
+ 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="time_text_css.css" rel="stylesheet" />
 <body style="font-family:Tahoma; font-size:16pt">
     <div align="center">
-	<img src="Images/timetext_logo.png" alt="logo" width="33%" align="middle">
-        <hr size="5" color="#b24800">
+	<img src="Images/timetext_logo.png" alt="logo" width="40%" align="middle">
+        <hr size="5" color="#ff6700">
 		<!--<h1 style="font-family:Tahoma;font-size:48pt">TimeText</h1>!-->
+		
+   
     <br><br><b>Message:</b>
     <br>
     <input type="text" maxLength="160" name="Message" id="Message" required
-        style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#b24800">
+        style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700">
     <div class="tooltip"><b>?</b><span class="tooltiptext"><li>Message limit is 160 characters</li></span></div>
     <br>
     <br><b>Phone Number: </b>
     <br>
     <input type='text' onkeypress='validate(event)' name="ToNumber" id="ToNumber" placeholder="0123456789" size="12" maxlength="10"
-    required style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#b24800">
+    required style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700">
         <div class="tooltip"><b>?</b>
           <span class="tooltiptext">
             <li> Type your phone number here</li>
@@ -31,12 +33,12 @@
         </div>
     <br>
         <br><b>Select Date:</b><br>
-        <input type="date" id="date" name="date" size="20" style="font-family:Tahoma;font-size:16pt;border-color:#b24800"/>
+        <input type="date" id="date" name="date" size="20" style="font-family:Tahoma;font-size:16pt;border-color:#ff6700"/>
         <!-- <input type="button" value="Submit" name="B1"></p> -->
         </form>
         <br>
 		<br><b>Hour:</b>
-		<select name="hours" id="Hour" required style="font-family:Tahoma;font-size:16pt;border-color:#b24800;border-width:medium">
+		<select name="hours" id="Hour" required style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;border-width:medium">
 			<option disabled selected value="Select an Hour">Hour</option>
 			<option value="1">1:00</option>
 			<option value="2">2:00</option>
@@ -51,16 +53,18 @@
 			<option value="11">11:00</option>
 			<option value="12">12:00</option>
 		</select>&nbsp;&nbsp;&nbsp;&nbsp; <br><br><b>AM/PM:</b>
-		<select name="am/pm" id="AM/PM" required style="font-family:Tahoma;font-size:16pt;border-color:#b24800;border-width:medium">
+		<select name="am/pm" id="AM/PM" required style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;border-width:medium">
 			<option disabled selected value="am/pm">AM/PM</option>
 			<option value="am">AM</option>
 			<option value="pm">PM</option>
 		</select>
 		<br>
 		<br>
-		<input type="submit" id="saveTask" onclick=checkCount() value="Save Task" style="font-size:20pt;width:150px;background-color:#b24800;font-family:Tahoma;color:white">
+		<input type="submit" id="saveTask" onclick=checkCount() value="Save Task" style="font-size:20pt;width:150px;background-color:#ff6700;font-family:Tahoma;color:white">
 		<br>
         <p id="orderSaved"></p>
+		<a href="how_it_works.html">How TimeText Works</a>
+		 <link href="how_it_works.html" >
         <!-- <input type="textarea" name="Orders" style="width:200px; height:200px;" id="Order" wrap="soft"> -->
 
     </div>
@@ -148,7 +152,10 @@
             });
         }
     </script> -->
+ 
 </body>
+<img src="Images/powered_by_aws_logo.png" alt="logo" width="10%" style="position:fixed;bottom:75px;right:25px">
+<img src="Images/powered_by_twilio_logo.png" alt="logo" width="15%" style="position:fixed;bottom:25px;right:0px">
 <footer>
 <!-- style="font-size:10pt;text-align:center;position:fixed;bottom:10px;width:100%" -->
 		<p style="font-size:10pt;text-align:center;">By using this service, you agree to the Twilio API <a href="https://www.twilio.com/legal/tos">Terms &amp Conditions.</a></p>

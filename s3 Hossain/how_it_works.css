@@ -1,6 +1,9 @@
 body {
-   /* background: black url(wood.png) repeat; */
+	
+   /* background: url(black-paper.png);    */
+   /* background-image: linear-gradient(#ff4500, #ff8c00); */
    background-image:linear-gradient(#0c1d49, #7796c4, #e0e7f2);
+   opacity: 3.5;
    position: relative;
    width: 90%;
    
@@ -8,11 +11,21 @@ body {
    max-width: 1400px;
     
 }
+
+ #diagram{ 
+ position: absolute; 
+ top:30px; 
+ right: 0; 
+ width: 30px; 
+ height: 30px;
+ background: url(Images/timetext_diagram.png);
+ } 
+
  aside {
     width: 40%;
-    padding-left: 0rem;
+    padding-left: .5rem;
     margin-left: .5rem;
-    float: left-side;
+    float: right;
     box-shadow: inset 5px 0 5px -5px #29627e;
     font-style: italic;
     color: #29627e;

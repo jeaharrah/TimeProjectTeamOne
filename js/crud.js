@@ -1,4 +1,4 @@
-document.getElementById("saveTask").onclick = function () {
+function saveTask(){
 	/* document.getElementById("Message").value = document.getElementById("date").value;
 	return; */
 	
@@ -268,4 +268,19 @@ function randomString() {
 		randomstring += chars.substring(rnum, rnum + 1);
 	}
 	return randomstring;
+}
+
+function checkCount(){
+	if (document.getElementById("ToNumber").value == "") {
+		alert("Please enter a phone number.")
+		return;
+	}
+	$.get("https://vr3v4bjgm1.execute-api.us-east-1.amazonaws.com/default/CheckPhoneNumber?attributeValue=" + document.getElementById("ToNumber").value, 
+				    function(data, status) {
+                    if(data.Count > 4)
+						alert("You have reached the max of 5 texts scheduled.");
+					else
+						saveTask();
+                    //$("#Tasks").text(JSON.stringify(data));
+                });
 }
