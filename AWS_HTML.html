@@ -2,162 +2,66 @@
 
 <title>TimeText&reg</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/time_text_css.css" rel="stylesheet" />
+<div class="sidenav" nav="sidenav" style="height:100%;width:15%;position:fixed;z-index=1;top=0;left=0;background-color:white;overflow-x:hidden; padding-top:100px;text-align:left;display:block;float:left;list-style-type:none">
 
-<div class="sidenav" nav="sidenav" style="height:100%;width:15%;position:fixed;z-index=1;top=0;left=0;background-color:navy;overflow-x:hidden; padding-top:100px;text-align:left;display:block;float:left;list-style-type:none">
-		
-			<li style="background:#ff6700;padding-left:10px;padding-top:5px;padding-bottom:5px;border-bottom:2px solid white;">
-			<a class="active" href="AWS_HTML.html" style="color:white;text-decoration:none;margin-bottom:10px;width:100%;">Home</a></li>
-			
-			<li style="padding-left:10px;padding-top:5px;padding-bottom:5px"><a href="AWS_HowItWorks_Page.html" style="color:white;text-decoration:none">How it Works</a></li>
-			
-			<li style="padding-left:10px;padding-top:5px;padding-bottom:5px;"><a href="AWS_Help_Page.html" style="color:white;text-decoration:none;">Help</a></li>
-		
-	</div>
+    <li style="background:#ff6700;padding-left:10px;padding-top:5px;padding-bottom:5px;border-bottom:2px solid white;">
+        <a class="active" href="AWS_HTML.html" style="color:black;text-decoration:none;margin-bottom:10px;width:100%;">Home</a></li>
 
-<body style="font-family:Tahoma; font-size:16pt; color:navy;">
+    <li style="padding-left:10px;padding-top:5px;padding-bottom:5px"><a href="AWS_HowItWorks_Page.html" style="color:black;text-decoration:none">How
+            it Works</a></li>
+
+    <li style="padding-left:10px;padding-top:5px;padding-bottom:5px;"><a href="AWS_Help_Page.html" style="color:black;text-decoration:none;">Help</a></li>
+
+</div>
+
+<body style="font-family:Tahoma; font-size:16pt; color:white;">
     <div align="center">
-	<img src="Images/timetext_logo.png" alt="logo" width="33%" align="middle">
-	<hr size="5" color="#ff6700">
+        <img src="Images/timetext_logo.png" alt="logo" width="33%" align="middle">
+        <hr size="5" color="#ff6700">
 
         <br>Message:
         <br>
-        <input type="text" maxLength="160" name="Message" id="Message" required
-            style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700;color:navy">
+        <input type="text" maxLength="160" name="Message" id="Message" required style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700;color:navy">
         <div class="tooltip">?
-		<span class="tooltiptext">
-		<li>Message limit is 160 characters.</li>
-		</span>
-		</div>
+            <span class="tooltiptext">
+                <li>Message limit is 160 characters.</li>
+            </span>
+        </div>
         <br>
         <br>Phone Number:
         <br>
         <input type="text" name="ToNumber" id="ToNumber" placeholder="0123456789" size="12" maxlength="10" required
             style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700;color:navy">
-            <div class="tooltip">?
-              <span class="tooltiptext">
+        <div class="tooltip">?
+            <span class="tooltiptext">
                 <li> 10-digit SMS number</li>
                 <li> Avoid: "-" or "()"</li>
                 <li> Enter country code with +
-              </span>
-            </div>
+            </span>
+        </div>
         <br>
         <br><b>Select Date and Time:</b><br>
-        <input type="datetime-local" id="date" name="date" size="20" style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;color:navy" step="3600"/>
+        <input type="datetime-local" id="date" name="date" size="20" style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;color:navy"
+            step="3600" />
         <br>
-        <!-- <br><b>Hour:</b> -->
-        <!-- <select name="hours" id="Hour" required style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;border-width:medium">
-            <option disabled selected value="Select an Hour">Hour</option>
-            <option value="1">1:00</option>
-            <option value="2">2:00</option>
-            <option value="3">3:00</option>
-            <option value="4">4:00</option>
-            <option value="5">5:00</option>
-            <option value="6">6:00</option>
-            <option value="7">7:00</option>
-            <option value="8">8:00</option>
-            <option value="9">9:00</option>
-            <option value="10">10:00</option>
-            <option value="11">11:00</option>
-            <option value="12">12:00</option>
-        </select>&nbsp;&nbsp;&nbsp;&nbsp; <b>AM/PM:</b>
-        <select name="am/pm" id="AM/PM" required style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;border-width:medium">
-            <option disabled selected value="am/pm">AM/PM</option>
-            <option value="am">AM</option>
-            <option value="pm">PM</option>
-        </select> -->
+
 
         <br>
         <input type="submit" id="saveTask" value="Save Task" style="font-size:20pt;width:150px;background-color:#ff6700;font-family:Tahoma;color:white">
         <br>
         <p id="orderSaved"></p>
-        <p style="font-size:10pt;text-align:center;position:fixed;bottom:10px;width:100%">By using this service,
-            you
-            agree to the Twilio API <a href="https://www.twilio.com/legal/tos">Terms &amp Conditions.</a></p>
+        <p style="font-size:10pt;text-align:center;color:black;position:fixed;bottom:10px;width:100%">By using this service, you agree to the Twilio API <a href="https://www.twilio.com/legal/tos">Terms &amp Conditions.</a></p>
 
-        <!-- <input type="textarea" name="Orders" style="width:200px; height:200px;" id="Order" wrap="soft"> -->
 
-    <script type="text/javascript" src="https://unpkg.com/libphonenumber-js/bundle/libphonenumber-js.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/moment.js"></script>
-    <script src="js/crud.js"></script>
-    <link rel="stylesheet" href="css/popup.css">
+        <script type="text/javascript" src="https://unpkg.com/libphonenumber-js/bundle/libphonenumber-js.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/moment.js"></script>
+        <script src="js/crud.js"></script>
+        <link rel="stylesheet" href="css/popup.css">
 
-<!--     <script>
-        document.getElementById("saveTask").onclick = function () {
-            var jsonDoc = {
-                "TableName": "Tasks",
-                "Item": {
-                    "TaskID": document.getElementById("TaskID").value,
-                    "Message": document.getElementById("Message").value,
-                    "ToNumber": document.getElementById("ToNumber").value
-                }
-            };
-            $.ajax({
-                url: "https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD",
-                type: "post",
-                data: JSON.stringify(jsonDoc),
-                dataType: "json",
-                success: function (jsonDoc) {
-                    console.info(jsonDoc);
-                    alert("Task Saved!");
-                }
-            });
-        }
 
-        $(document).ready(function () {
-            $("#getTasks").click(function () {
-                $.get("https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD", function (data, status) {
-                    // alert("Data: " + data + "\nStatus: " + status);
-                    $("#Tasks").text(JSON.stringify(data));
-                });
-            });
-        });
-
-        document.getElementById("deleteTask").onclick = function () {
-            var jsonDoc = {
-                "TableName": "Tasks",
-                "Key": {
-                    "TaskID": document.getElementById("TaskID").value
-                },
-            };
-            $.ajax({
-                url: "https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD",
-                type: "delete",
-                data: JSON.stringify(jsonDoc),
-                dataType: "json",
-                success: function (jsonDoc) {
-                    console.info(jsonDoc);
-                    alert("Item Deleted");
-                }
-            });
-        }
-
-        document.getElementById("editTask").onclick = function () {
-            var jsonDoc = {
-                "TableName": "Tasks",
-                "Key": {
-                    "TaskID": document.getElementById("TaskID").value
-                },
-                "UpdateExpression": "set ToNumber = :a, Message = :b",
-                "ExpressionAttributeValues": {
-                    ":a": document.getElementById("ToNumber").value,
-                    ":b": document.getElementById("Message").value
-                },
-                "ReturnValues": "UPDATED_NEW"
-            };
-            $.ajax({
-                url: "https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD",
-                type: "put",
-                data: JSON.stringify(jsonDoc),
-                dataType: "json",
-                success: function (jsonDoc) {
-                    console.info(jsonDoc);
-                    alert("Task Edited!");
-                }
-            });
-        }
-    </script> -->
 </body>
 
 
