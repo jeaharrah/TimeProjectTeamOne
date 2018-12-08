@@ -1,0 +1,163 @@
+<html>
+
+<title>TimeText | Home</title>
+
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="time_text_css.css" rel="stylesheet" />
+<body style="font-family:Tahoma; font-size:16pt">
+    <div align="center">
+	<img src="Images/timetext_logo.png" alt="logo" width="40%" align="middle">
+        <hr size="5" color="#ff6700">
+		<!--<h1 style="font-family:Tahoma;font-size:48pt">TimeText</h1>!-->
+		
+   
+    <br><br><b>Message:</b>
+    <br>
+    <input type="text" maxLength="160" name="Message" id="Message" required
+        style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700">
+    <div class="tooltip"><b>?</b><span class="tooltiptext"><li>Message limit is 160 characters</li></span></div>
+    <br>
+    <br><b>Phone Number: </b>
+    <br>
+    <input type='text' onkeypress='validate(event)' name="ToNumber" id="ToNumber" placeholder="0123456789" size="12" maxlength="10"
+    required style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700">
+        <div class="tooltip"><b>?</b>
+          <span class="tooltiptext">
+            <li> Type your phone number here</li>
+            <li> 10 digit phone number</li>
+            <li> Avoide - or ()</li>
+            <li> Do not copy and paste</li>
+            <li> Service supports only nationwide</li>
+          </span>
+        </div>
+    <br>
+        <br><b>Select Date:</b><br>
+        <input type="date" id="date" name="date" size="20" style="font-family:Tahoma;font-size:16pt;border-color:#ff6700"/>
+        <!-- <input type="button" value="Submit" name="B1"></p> -->
+        </form>
+        <br>
+		<br><b>Hour:</b>
+		<select name="hours" id="Hour" required style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;border-width:medium">
+			<option disabled selected value="Select an Hour">Hour</option>
+			<option value="1">1:00</option>
+			<option value="2">2:00</option>
+			<option value="3">3:00</option>
+			<option value="4">4:00</option>
+			<option value="5">5:00</option>
+			<option value="6">6:00</option>
+			<option value="7">7:00</option>
+			<option value="8">8:00</option>
+			<option value="9">9:00</option>
+			<option value="10">10:00</option>
+			<option value="11">11:00</option>
+			<option value="12">12:00</option>
+		</select>&nbsp;&nbsp;&nbsp;&nbsp; <br><br><b>AM/PM:</b>
+		<select name="am/pm" id="AM/PM" required style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;border-width:medium">
+			<option disabled selected value="am/pm">AM/PM</option>
+			<option value="am">AM</option>
+			<option value="pm">PM</option>
+		</select>
+		<br>
+		<br>
+		<input type="submit" id="saveTask" onclick=checkCount() value="Save Task" style="font-size:20pt;width:150px;background-color:#ff6700;font-family:Tahoma;color:white">
+		<br>
+        <p id="orderSaved"></p>
+		<a href="how_it_works.html">How TimeText Works</a>
+		 <link href="how_it_works.html" >
+        <!-- <input type="textarea" name="Orders" style="width:200px; height:200px;" id="Order" wrap="soft"> -->
+
+    </div>
+
+    <script type="text/javascript" src="https://unpkg.com/libphonenumber-js/bundle/libphonenumber-js.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script src="js/crud.js"></script>
+    <script src="js/inputInt.js"></script>
+    <link rel="stylesheet" href="css/popup.css">
+
+<!--     <script>
+        document.getElementById("saveTask").onclick = function () {
+            var jsonDoc = {
+                "TableName": "Tasks",
+                "Item": {
+                    "TaskID": document.getElementById("TaskID").value,
+                    "Message": document.getElementById("Message").value,
+                    "ToNumber": document.getElementById("ToNumber").value
+                }
+            };
+            $.ajax({
+                url: "https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD",
+                type: "post",
+                data: JSON.stringify(jsonDoc),
+                dataType: "json",
+                success: function (jsonDoc) {
+                    console.info(jsonDoc);
+                    alert("Task Saved!");
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            $("#getTasks").click(function () {
+                $.get("https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD", function (data, status) {
+                    // alert("Data: " + data + "\nStatus: " + status);
+                    $("#Tasks").text(JSON.stringify(data));
+                });
+            });
+        });
+
+        document.getElementById("deleteTask").onclick = function () {
+            var jsonDoc = {
+                "TableName": "Tasks",
+                "Key": {
+                    "TaskID": document.getElementById("TaskID").value
+                },
+            };
+            $.ajax({
+                url: "https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD",
+                type: "delete",
+                data: JSON.stringify(jsonDoc),
+                dataType: "json",
+                success: function (jsonDoc) {
+                    console.info(jsonDoc);
+                    alert("Item Deleted");
+                }
+            });
+        }
+
+        document.getElementById("editTask").onclick = function () {
+            var jsonDoc = {
+                "TableName": "Tasks",
+                "Key": {
+                    "TaskID": document.getElementById("TaskID").value
+                },
+                "UpdateExpression": "set ToNumber = :a, Message = :b",
+                "ExpressionAttributeValues": {
+                    ":a": document.getElementById("ToNumber").value,
+                    ":b": document.getElementById("Message").value
+                },
+                "ReturnValues": "UPDATED_NEW"
+            };
+            $.ajax({
+                url: "https://c6tap4pp8c.execute-api.us-east-1.amazonaws.com/default/CRUD",
+                type: "put",
+                data: JSON.stringify(jsonDoc),
+                dataType: "json",
+                success: function (jsonDoc) {
+                    console.info(jsonDoc);
+                    alert("Task Edited!");
+                }
+            });
+        }
+    </script> -->
+ 
+</body>
+<img src="Images/powered_by_aws_logo.png" alt="logo" width="10%" style="position:fixed;bottom:75px;right:25px">
+<img src="Images/powered_by_twilio_logo.png" alt="logo" width="15%" style="position:fixed;bottom:25px;right:0px">
+<footer>
+<!-- style="font-size:10pt;text-align:center;position:fixed;bottom:10px;width:100%" -->
+		<p style="font-size:10pt;text-align:center;">By using this service, you agree to the Twilio API <a href="https://www.twilio.com/legal/tos">Terms &amp Conditions.</a></p>
+</footer>
+</html>
