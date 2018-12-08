@@ -13,7 +13,7 @@
   border-radius: 3px;
   padding: 3px 0;
   border: 1px solid black;
-  background-color: lightblue;
+  background-color: white;
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
@@ -28,7 +28,11 @@
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+  
 }
+
+
+
 .tooltip .tooltiptext::after {
   content: " ";
   position: absolute;
