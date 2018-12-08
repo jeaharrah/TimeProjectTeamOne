@@ -5,49 +5,53 @@
 
 </head>
 <link href="admin_css.css" rel="stylesheet" />
-<body>
+<body style="font-family:Tahoma;font-size:16pt;color:maroon">
     <div align="center">
 	<img src="Images/timetext_logo.png" alt="logo" width="40%" align="middle">
-        <h1>Create, Delete, or View Tasks</h1> <strong>Task ID</strong>:
+	    <hr size="5" color="maroon">
+
+		<h1 style="font-size:24pt">Administrator Page</h1>
+        <h1 style="font-size:20pt">---Create, Delete, or View Tasks---</h1>
+		<strong>Task ID</strong>
         <br>
-        <input type="text" name="TaskID" id="TaskID">
+        <input type="text" name="TaskID" id="TaskID" style="font-size:16pt">
 		<br>
         <br> Message:
         <br>
-        <input type="text" name="Message" id="Message">
+        <input type="text" name="Message" id="Message" style="font-size:16pt">
         <br> To Number:
         <br>
-        <input type="text" name="ToNumber" id="ToNumber">
+        <input type="text" name="ToNumber" id="ToNumber" style="font-size:16pt">
         <br>Time Stamp
         <br>
-		<input type="text" name="StampOfTime" id="StampOfTime">
+		<input type="text" name="StampOfTime" id="StampOfTime" style="font-size:16pt">
         <br>
 		<!-- <input type="submit" id="search" onclick=search() value="search"> -->
         <br>
-        <input type="submit" id="saveTask" onclick=saveTask() value="Save Task">
+        <input type="submit" id="saveTask" onclick=saveTask() value="Save Task" style="font-size:14pt">
         <br>
         <p id="orderSaved"></p>
-        <input type="submit" id="deleteTask" onclick=deleteTask() value="Delete Task">
+        <input type="submit" id="deleteTask" onclick=deleteTask() value="Delete Task" style="font-size:14pt">
         <br>
         <!-- <input type="submit" id="editTask" onclick=editTask() value="Edit Task">
 		<br> -->
 		<br>
-        <input type="submit" id="getATask" onclick=getATask() value="Get A Task">
+        <input type="submit" id="getATask" onclick=getATask() value="Get A Task" style="font-size:14pt">
 		   
 		</select>
 		
 		<br>
         <br>
-        <input type="submit" id="getTasks" onclick=search() value="View all tasks">
+        <input type="submit" id="getTasks" onclick=search() value="View all tasks" style="font-size:14pt">
 		<br>
         <br>
 		
 		<div class="container">
                            <div class="row">
                               <div class="table-responsive">
-                                 <table width=900 bgcolor=skyblue border=1 class="table table-striped w-auto">
+                                 <table width=900 bgcolor=brown border=1 class="table table-striped w-auto">
                                     <thead>
-                                       <tr>
+                                       <tr style="color:white;font-size:14pt">
                                           <th>#</th>
                                           <th>Task ID</th>
                                           <th>Message</th>
