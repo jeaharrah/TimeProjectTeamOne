@@ -12,6 +12,8 @@ Or they may not even set reminders in the first place due to the endless number 
 start time, end time, location, recurring alerts, priority (low, medium, high), travel time, invitees, “Show As” status, work/home calendar selection, and notes.
 
 ## Usage  
+
+Currently only works hourly, due to limitations of lambda system.  
 Fields:  
 Message - Containing the description/purpose of reminder  
 Cell phone number - the SMS number to which the reminder is being sent*  
