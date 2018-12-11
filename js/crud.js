@@ -15,6 +15,12 @@ function saveTask(){
 	var message = document.getElementById("Message").value;
 	var toNumber = document.getElementById("ToNumber").value;
 	
+	//document.getElementById("Message").value = hour;
+	//return;
+	
+	
+	
+	
 	//if (year == "" || month == "" || day == "") {
 		//alert("Please fill out all fields");
 		//return;
@@ -39,7 +45,7 @@ function saveTask(){
 		alert("Please select a date.")
 		return;
 	}
-	if (hour == "Hour") {
+	if (hour == "Select an Hour") {
 		alert("Please select an hour.")
 		return;
 	}

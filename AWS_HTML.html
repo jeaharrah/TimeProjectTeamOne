@@ -1,71 +1,83 @@
 <html>
 
-<title>TimeText&reg</title>
+<title>TimeText | Home</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/time_text_css.css" rel="stylesheet" />
-<div class="sidenav" nav="sidenav" style="height:100%;width:15%;position:fixed;z-index=1;top=0;left=0;background-color:white;overflow-x:hidden; padding-top:100px;text-align:left;display:block;float:left;list-style-type:none">
-
-    <li style="background:#ff6700;padding-left:10px;padding-top:5px;padding-bottom:5px;border-bottom:2px solid white;">
-        <a class="active" href="AWS_HTML.html" style="color:black;text-decoration:none;margin-bottom:10px;width:100%;">Home</a></li>
-
-    <li style="padding-left:10px;padding-top:5px;padding-bottom:5px"><a href="AWS_HowItWorks_Page.html" style="color:black;text-decoration:none">How
-            it Works</a></li>
-
-    <li style="padding-left:10px;padding-top:5px;padding-bottom:5px;"><a href="AWS_Help_Page.html" style="color:black;text-decoration:none;">Help</a></li>
-
-</div>
-
-<body style="font-family:Tahoma; font-size:16pt; color:white;">
+<link href="time_text_css.css" rel="stylesheet" />
+<body style="font-family:Tahoma; font-size:16pt; color:white">
     <div align="center">
-        <img src="Images/timetext_logo.png" alt="logo" width="33%" align="middle">
+	<img src="Images/timetext_logo.png" alt="logo" width="40%" align="middle">
         <hr size="5" color="#ff6700">
-
-        <br>Message:
-        <br>
-        <input type="text" maxLength="160" name="Message" id="Message" required style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700;color:navy">
-        <div class="tooltip">?
-            <span class="tooltiptext">
-                <li>Message limit is 160 characters.</li>
-            </span>
+		
+   
+    <br><br>Message:
+    <br>
+    <input type="text" maxLength="160" name="Message" id="Message" required
+        style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700">
+    <div class="tooltip"><b>?</b><span class="tooltiptext"><li>Message limit is 160 characters</li></span></div>
+    <br>
+    <br>Phone Number:
+    <br>
+    <input type='text' onkeypress='validate(event)' name="ToNumber" id="ToNumber" placeholder="0123456789" size="12" maxlength="10"
+    required style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700">
+        <div class="tooltip"><b>?</b>
+          <span class="tooltiptext">
+            <li> Enter your phone number here</li>
+            <li> 10-digit SMS number</li>
+            <li> Avoid "-" or "()"</li>
+            <li> Do not copy and paste</li>
+            <li> Service supports only nationwide</li>
+          </span>
         </div>
+    <br>
+        <br>Select Date:<br>
+        <input type="date" id="date" name="date" size="20" style="font-family:Tahoma;font-size:16pt;border-color:#ff6700"/>
+        </form>
         <br>
-        <br>Phone Number:
-        <br>
-        <input type="text" name="ToNumber" id="ToNumber" placeholder="0123456789" size="12" maxlength="10" required
-            style="text-align:center;font-family:Tahoma;font-size:16pt;border-color:#ff6700;color:navy">
-        <div class="tooltip">?
-            <span class="tooltiptext">
-                <li> 10-digit SMS number</li>
-                <li> Avoid: "-" or "()"</li>
-                <li> Enter country code with +
-            </span>
-        </div>
-        <br>
-        <br><b>Select Date and Time:</b><br>
-        <input type="datetime-local" id="date" name="date" size="20" style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;color:navy"
-            step="3600" />
-        <br>
-
-
-        <br>
-        <input type="submit" id="saveTask" value="Save Task" style="font-size:20pt;width:150px;background-color:#ff6700;font-family:Tahoma;color:white">
-        <br>
+		<br>Hour:
+		<select name="hours" id="Hour" required style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;border-width:medium">
+			<option disabled selected value="Select an Hour">Hour</option>
+			<option value="1">1:00</option>
+			<option value="2">2:00</option>
+			<option value="3">3:00</option>
+			<option value="4">4:00</option>
+			<option value="5">5:00</option>
+			<option value="6">6:00</option>
+			<option value="7">7:00</option>
+			<option value="8">8:00</option>
+			<option value="9">9:00</option>
+			<option value="10">10:00</option>
+			<option value="11">11:00</option>
+			<option value="12">12:00</option>
+		</select>&nbsp;&nbsp;&nbsp;&nbsp; <br><br>AM/PM:
+		<select name="am/pm" id="AM/PM" required style="font-family:Tahoma;font-size:16pt;border-color:#ff6700;border-width:medium">
+			<option disabled selected value="am/pm">AM/PM</option>
+			<option value="am">AM</option>
+			<option value="pm">PM</option>
+		</select>
+		<br>
+		<br>
+		<input type="submit" id="saveTask" onclick=checkCount() value="Save Task" style="font-size:20pt;width:150px;background-color:#ff6700;font-family:Tahoma;color:white">
+		<br>
         <p id="orderSaved"></p>
-        <p style="font-size:10pt;text-align:center;color:rgb(250, 227, 227);position:fixed;bottom:10px;width:100%">By using this service, you agree to the Twilio API <a href="https://www.twilio.com/legal/tos">Terms &amp Conditions.</a></p>
+		<a href="how_it_works.html">How TimeText Works</a>
+		 <link href="how_it_works.html" >
 
 
-        <script type="text/javascript" src="https://unpkg.com/libphonenumber-js/bundle/libphonenumber-js.min.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
-        <script type="text/javascript" src="js/moment.js"></script>
-        <script src="js/crud.js"></script>
-        <link rel="stylesheet" href="css/popup.css">
+    </div>
 
-
+    <script type="text/javascript" src="https://unpkg.com/libphonenumber-js/bundle/libphonenumber-js.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script src="js/crud.js"></script>
+    <script src="js/inputInt.js"></script>
+    <link rel="stylesheet" href="css/popup.css">
+ 
 </body>
-
-
 <img src="Images/powered_by_aws_logo.png" alt="logo" width="10%" style="position:fixed;bottom:75px;right:25px">
 <img src="Images/powered_by_twilio_logo.png" alt="logo" width="15%" style="position:fixed;bottom:25px;right:0px">
-
+<footer>
+		<p style="font-size:10pt;text-align:center;color:black">By using this service, you agree to the Twilio API <a href="https://www.twilio.com/legal/tos">Terms &amp Conditions.</a></p>
+</footer>
 </html>
