@@ -13,15 +13,23 @@ Average Americans are busy and overworked, hustling from place to place. They se
 Or they may not even set reminders in the first place due to the endless number of fields/selections that one can populate/use when creating a reminder or calendar event, such as: 
 start time, end time, location, recurring alerts, priority (low, medium, high), travel time, invitees, “Show As” status, work/home calendar selection, and notes.
 
+## Workflow
+
+![Imgur Image](https://i.imgur.com/zf1Z3VQ.png)
+
+## Main page
+![Imgur Image](https://i.imgur.com/htcLjqA.png)
+![Imgur Image](https://i.imgur.com/q1U2J43.png)
 
 ## Usage  
+Enter in the selected fields to recieve a SMS text at the scheduled hour. If you try to schedule a text to an invalid date or time (e.g past, nonexistent date), it will be rejected.
 
 Currently only works hourly, due to limitations of lambda system.  
-Fields:  
-Message - Containing the description/purpose of reminder  
-Cell phone number - the SMS number to which the reminder is being sent*  
-Date of reminder - the day on which the reminder text should be sent  
-Hour of reminder - with AM/PM selection  
+Fields to be entered:  
+**Message** - Containing the description/purpose of reminder  
+**Cell phone number** - the SMS number to which the reminder is being sent*  
+**Date of reminder** - the day on which the reminder text should be sent  
+**Hour of reminder** - with AM/PM selection  
 
 
 ## Contributing
